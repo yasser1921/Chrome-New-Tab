@@ -6,6 +6,24 @@ A Chrome new tab inspired by the teenage engineering K.O. II: a silver panel, a 
 
 [中文](#中文) · [English](#english) · [下载 / Download](https://github.com/yasser1921/Chrome-New-Tab/releases/download/v1.2.0/TE-OS-1.2.0.zip)
 
+## 来源 · Fork
+
+本仓库 fork 自 [RSK21X/TE-OS-Chrome-New-Tab](https://github.com/RSK21X/TE-OS-Chrome-New-Tab)。分叉时两边的 `main` 一致，对应提交 [`d55b406`](https://github.com/RSK21X/TE-OS-Chrome-New-Tab/commit/d55b4062f747bdd539dfafb279cbb0a00802f132)（Merge published README history into hardware redesign）。搜索、快捷方式、天气、日历、中英文和主题的行为与源仓库相同，数据仍来自 Open-Meteo，设置仍只保存在本机。
+
+此 fork 在该提交之后的改动：
+
+- **27 英寸 2K 布局。** 视口宽度达到 2200px 时，面板加宽到 1960px，说明文字提到 14–20px，分段时钟、按键、天气推子、旋钮和点阵日历一起放大，使 2560×1440 的最大化窗口一屏可读。1920px 及更窄的布局与源仓库相同。大屏点阵字模在 `app.js` 里按画布高度放大；呼号输入框的宽度改由样式表控制。
+- **版本。** 扩展版本从源仓库的 1.1.0 改为 1.2.0。
+- **安装包。** 下载地址改为本仓库 Release [v1.2.0](https://github.com/yasser1921/Chrome-New-Tab/releases/tag/v1.2.0)，不再使用源仓库 `main` 分支的 ZIP。
+
+This repository is a fork of [RSK21X/TE-OS-Chrome-New-Tab](https://github.com/RSK21X/TE-OS-Chrome-New-Tab). At the fork point both `main` branches matched commit [`d55b406`](https://github.com/RSK21X/TE-OS-Chrome-New-Tab/commit/d55b4062f747bdd539dfafb279cbb0a00802f132) (Merge published README history into hardware redesign). Search, shortcuts, weather, the calendar, language, and theme behave as they do upstream. Weather still comes from Open-Meteo, and settings still stay on the device.
+
+Changes after that commit:
+
+- **27-inch 2K layout.** At viewports of 2200px and wider, the chassis grows to 1960px. Labels rise to 14–20px, and the segment clock, keys, weather faders, knobs, and dot-matrix calendar grow with them, so a maximized 2560×1440 window stays readable on one screen. Layouts at 1920px and below match the source repository. The large-screen calendar glyphs scale with canvas height in `app.js`, and the call-sign field width now comes from the stylesheet.
+- **Version.** The extension version moves from 1.1.0 in the source repository to 1.2.0.
+- **Install archive.** Downloads point at this repository's [v1.2.0 release](https://github.com/yasser1921/Chrome-New-Tab/releases/tag/v1.2.0) instead of the source repository's `main` branch ZIP.
+
 ## 预览 · Screenshots
 
 ### 银色面板 · Silver panel
