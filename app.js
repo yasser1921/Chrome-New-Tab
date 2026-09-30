@@ -316,12 +316,17 @@ function syncToday(now=new Date()){
  if(followMonth)view=new Date(TODAY.getFullYear(),TODAY.getMonth(),1);
  drawLCD();renderCaption();
 }
-function drawHero(){const c=$('#heroCal');const{x,W,H}=setup(c);lattice(x,W,H,Math.max(4,W*0.022),1.1);
- const np=Math.max(5,Math.min(9,W*0.021)),nr=np*0.34,day=String(TODAY.getDate());
- text(x,day,W*0.04,(H-7*np)/2,np,nr,BONE);
- const tp=Math.max(2.6,Math.min(4,W*0.0115)),tr=tp*0.36,rx=W*0.04+strW(day,np)+np*2.2;
- text(x,WK_ABBR[TODAY.getDay()],rx,H*0.20,tp,tr,accent());
- text(x,MON_ABBR[TODAY.getMonth()]+' '+TODAY.getFullYear(),rx,H*0.20+7*tp+tp*2.4,tp,tr,DIM);
+function drawHero(){const c=$('#heroCal');const{x,W,H}=setup(c);
+ const large=H>80;
+ const pitch=large?Math.max(5,Math.min(8,W*0.014)):Math.max(4,W*0.022);
+ lattice(x,W,H,pitch,large?Math.max(1.45,pitch*0.32):1.1);
+ const np=large?Math.min(H*0.1,W*0.032):Math.max(5,Math.min(9,W*0.021)),nr=np*0.34,day=String(TODAY.getDate());
+ const ox=large?W*0.05:W*0.04;
+ text(x,day,ox,(H-7*np)/2,np,nr,BONE);
+ const tp=large?Math.min(np*0.55,H*0.056):Math.max(2.6,Math.min(4,W*0.0115)),tr=tp*0.36,rx=ox+strW(day,np)+np*2.2;
+ const gap=large?1.5:2.4,block=7*tp+tp*gap+7*tp,y1=large?Math.max(2,(H-block)/2):H*0.20;
+ text(x,WK_ABBR[TODAY.getDay()],rx,y1,tp,tr,accent());
+ text(x,MON_ABBR[TODAY.getMonth()]+' '+TODAY.getFullYear(),rx,y1+7*tp+tp*gap,tp,tr,DIM);
  c.setAttribute('aria-label',`${WK_ABBR[TODAY.getDay()]} ${TODAY.getDate()} ${MON_ABBR[TODAY.getMonth()]} ${TODAY.getFullYear()}`);
 }
 function drawMonth(){const c=$('#monthCal');const W=c.clientWidth,padX=4,padTop=4;
