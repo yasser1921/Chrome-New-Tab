@@ -27,7 +27,9 @@
       </div>
       <div class="drawer" id="drawer" inert aria-hidden="true">
         <div class="dw-h"><b data-i18n="setup">SETUP</b><span>MENU 01 / 01</span></div>
-        <div class="drow"><label data-i18n="lbl_engine">Engine</label><div class="seg sm" data-group="engine"><span class="ind"></span><button data-val="google">Google</button><button data-val="bing">Bing</button></div></div>
+        <div class="drow block"><label data-i18n="lbl_engine">Engine</label>
+          <div class="engine-drawer" id="engineDrawer"></div>
+        </div>
         <div class="drow block"><label data-i18n="lbl_location">Location</label>
           <div class="locwrap">
             <input type="text" id="locInput" data-i18n-ph="ph_loc" spellcheck="false" autocomplete="off">
@@ -69,7 +71,13 @@
       <input id="q" data-i18n-ph="ph_search" spellcheck="false" aria-label="Search query"><span class="cnt" id="cnt">00 CH</span>
       <button class="go" id="goBtn" type="submit">GOOGLE</button>
     </form>
-    <div class="seg engmode" id="engineSeg" data-group="engine"><span class="ind eng"></span><button data-val="google">Google</button><button data-val="bing">Bing</button></div>
+    <div class="engine-picker" id="enginePicker">
+      <button type="button" class="engine-slot on" id="engineCurrent" aria-current="true">Google</button>
+      <div class="engine-more">
+        <button type="button" class="engine-slot engine-toggle" id="engineToggle" aria-expanded="false" aria-controls="engineList" aria-haspopup="listbox" data-i18n="engine_more">More</button>
+        <div class="engine-menu" id="engineList" role="listbox"></div>
+      </div>
+    </div>
   </section>
 
   <div class="control-deck">

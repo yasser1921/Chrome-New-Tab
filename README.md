@@ -8,19 +8,21 @@ A Chrome new tab inspired by the teenage engineering K.O. II: a silver panel, a 
 
 ## 来源 · Fork
 
-本仓库 fork 自 [RSK21X/TE-OS-Chrome-New-Tab](https://github.com/RSK21X/TE-OS-Chrome-New-Tab)。分叉时两边的 `main` 一致，对应提交 [`d55b406`](https://github.com/RSK21X/TE-OS-Chrome-New-Tab/commit/d55b4062f747bdd539dfafb279cbb0a00802f132)（Merge published README history into hardware redesign）。搜索、快捷方式、天气、日历、中英文和主题的行为与源仓库相同，数据仍来自 Open-Meteo，设置仍只保存在本机。
+本仓库 fork 自 [RSK21X/TE-OS-Chrome-New-Tab](https://github.com/RSK21X/TE-OS-Chrome-New-Tab)。分叉时两边的 `main` 一致，对应提交 [`d55b406`](https://github.com/RSK21X/TE-OS-Chrome-New-Tab/commit/d55b4062f747bdd539dfafb279cbb0a00802f132)（Merge published README history into hardware redesign）。快捷方式、天气、日历、中英文和主题的行为与源仓库相同。搜索改为五个引擎与可展开选择器。数据仍来自 Open-Meteo，设置仍只保存在本机。
 
 此 fork 在该提交之后的改动：
 
 - **27 英寸 2K 布局。** 视口宽度达到 2200px 时，面板加宽到 1960px，说明文字提到 14–20px，分段时钟、按键、天气推子、旋钮和点阵日历一起放大，使 2560×1440 的最大化窗口一屏可读。1920px 及更窄的布局与源仓库相同。大屏点阵字模在 `app.js` 里按画布高度放大；呼号输入框的宽度改由样式表控制。
+- **搜索引擎。** 搜索框右侧顶部显示当前引擎，下方「更多」展开其余引擎。支持百度、谷歌、必应、DuckDuckGo、Yandex；选择写入本机 `te01.engine`。
 - **版本。** 扩展版本从源仓库的 1.1.0 改为 1.2.0。
 - **安装包。** 下载地址改为本仓库 Release [v1.2.0](https://github.com/yasser1921/Chrome-New-Tab/releases/tag/v1.2.0)，不再使用源仓库 `main` 分支的 ZIP。
 
-This repository is a fork of [RSK21X/TE-OS-Chrome-New-Tab](https://github.com/RSK21X/TE-OS-Chrome-New-Tab). At the fork point both `main` branches matched commit [`d55b406`](https://github.com/RSK21X/TE-OS-Chrome-New-Tab/commit/d55b4062f747bdd539dfafb279cbb0a00802f132) (Merge published README history into hardware redesign). Search, shortcuts, weather, the calendar, language, and theme behave as they do upstream. Weather still comes from Open-Meteo, and settings still stay on the device.
+This repository is a fork of [RSK21X/TE-OS-Chrome-New-Tab](https://github.com/RSK21X/TE-OS-Chrome-New-Tab). At the fork point both `main` branches matched commit [`d55b406`](https://github.com/RSK21X/TE-OS-Chrome-New-Tab/commit/d55b4062f747bdd539dfafb279cbb0a00802f132) (Merge published README history into hardware redesign). Shortcuts, weather, the calendar, language, and theme behave as they do upstream. Search now uses five engines and an expandable picker. Weather still comes from Open-Meteo, and settings still stay on the device.
 
 Changes after that commit:
 
 - **27-inch 2K layout.** At viewports of 2200px and wider, the chassis grows to 1960px. Labels rise to 14–20px, and the segment clock, keys, weather faders, knobs, and dot-matrix calendar grow with them, so a maximized 2560×1440 window stays readable on one screen. Layouts at 1920px and below match the source repository. The large-screen calendar glyphs scale with canvas height in `app.js`, and the call-sign field width now comes from the stylesheet.
+- **Search engines.** The current engine sits at the top right of the search box. A More control expands the others. Baidu, Google, Bing, DuckDuckGo, and Yandex are supported, and the choice is stored in local `te01.engine`.
 - **Version.** The extension version moves from 1.1.0 in the source repository to 1.2.0.
 - **Install archive.** Downloads point at this repository's [v1.2.0 release](https://github.com/yasser1921/Chrome-New-Tab/releases/tag/v1.2.0) instead of the source repository's `main` branch ZIP.
 
@@ -44,7 +46,7 @@ Changes after that commit:
 - **可自定义网站按键**：使用网站图标，支持添加、编辑、删除，最多 12 个；修改会同步到其他已打开的新标签页。
 - **天气推子与旋钮**：查看六个预报时段，选择时段后更新屏幕读数；白色旋钮切换摄氏/华氏，橙色旋钮打开城市查询。
 - **点阵日历**：浏览月份、选择日期、返回今天，并在跨午夜时更新当天日期。
-- **搜索**：支持 Google 与 Bing，使用键盘快捷键快速搜索或打开网站。
+- **搜索**：支持百度、谷歌、必应、DuckDuckGo、Yandex；搜索框右侧顶部为当前引擎，下方可展开切换，选择保存在本机。
 - **中英文与明暗主题**：设置在本机保存；字体随扩展打包，无需在线加载字体。
 
 ### 安装
@@ -68,6 +70,7 @@ Changes after that commit:
 | 水平天气推子 | 拖动或使用方向键选择时段，屏幕显示对应的温度与天气。 |
 | 白色旋钮 | 点击切换 °C / °F。 |
 | 橙色旋钮 | 点击查询和选择城市。 |
+| 搜索引擎 | 右侧顶部为当前引擎；点击下方「更多」展开并切换。 |
 | 日历按键 | `−` / `+` 切换月份，“今天”返回当天。 |
 | 日历屏幕 | 点击选择日期；聚焦后使用方向键移动选择，`Home` 返回今天。 |
 
@@ -81,7 +84,7 @@ Changes after that commit:
 
 ### 数据与隐私
 
-- 搜索词发送给所选的 Google 或 Bing 搜索引擎。
+- 搜索词发送给所选搜索引擎（百度、谷歌、必应、DuckDuckGo、Yandex）。
 - 城市查询与天气使用 Open-Meteo；网站图标使用 Google Favicon 服务，获取失败时显示名称首字母。
 - 设置与快捷方式保存在本机浏览器中，不包含分析追踪代码。
 - 天气服务不可用时，同一页面中已获取的天气会标记为“缓存”；预设城市的示例数据会标记为“离线”；其他城市没有缓存时显示“无数据”。
@@ -94,7 +97,7 @@ Changes after that commit:
 - **Custom website keys** — Website favicons, editable names and URLs, and up to 12 shortcuts. Changes synchronize across open new tabs.
 - **Weather faders and knobs** — Browse six forecast hours. Select an hour to update the display, use the light knob to change units, and use the orange knob to find a city.
 - **Dot-matrix calendar** — Browse months, select dates, return to today, and update the current date after midnight.
-- **Search** — Google and Bing, with keyboard shortcuts for search and websites.
+- **Search** — Baidu, Google, Bing, DuckDuckGo, and Yandex. The current engine sits above a More control that expands the others; the choice is saved locally. Keyboard shortcuts still focus search and open website keys.
 - **Language and appearance** — Chinese and English, light and dark panels, locally saved preferences, and bundled fonts.
 
 ### Install
@@ -118,6 +121,7 @@ To update, replace the files in the existing extension folder, click its reload 
 | Horizontal weather fader | Drag or use arrow keys to select an hour and show its temperature and conditions. |
 | Light knob | Switch between °C and °F. |
 | Orange knob | Search for and select a city. |
+| Search engine | The current engine is on the top right. Use **More** below it to switch. |
 | Calendar keys | Use `−` / `+` to change months, or **Today** to return to the current date. |
 | Calendar screen | Click a date. When focused, use arrow keys to move the selection or `Home` to return to today. |
 
@@ -131,7 +135,7 @@ To update, replace the files in the existing extension folder, click its reload 
 
 ### Data and privacy
 
-- Search terms are sent to the selected Google or Bing search engine.
+- Search terms are sent to the selected engine (Baidu, Google, Bing, DuckDuckGo, or Yandex).
 - City lookup and weather use Open-Meteo. Website icons use Google's Favicon service, with the name's initial as a fallback.
 - Preferences and shortcuts stay in the local browser. No analytics tracking code is included.
 - If weather requests fail, data already fetched in the same page is marked **CACHE**. Preset sample weather is marked **OFFLINE**. Other cities without cached data show **NO DATA**.
