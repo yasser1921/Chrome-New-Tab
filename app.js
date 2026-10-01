@@ -25,7 +25,7 @@ const DICT={
   search_tag:'搜索',shortcuts_tag:'快捷方式',weather_tag:'天气',calendar_tag:'日历',
   query_out:'查询发出',slots:'槽位',sync:'同步',edit:'编辑',done:'完成',today:'今天',reset:'重置',
   stored:'本地保存',lbl_engine:'引擎',lbl_location:'位置',lbl_units:'单位',lbl_clock:'制式',
-  engine_more:'更多',eng_baidu:'百度',eng_google:'谷歌',eng_bing:'必应',eng_duckduckgo:'DuckDuckGo',eng_yandex:'Yandex',
+  engine_more:'更多',eng_baidu:'Baidu',eng_google:'Google',eng_bing:'Bing',eng_duckduckgo:'DuckDuckGo',eng_yandex:'Yandex',
   lbl_theme:'主题',lbl_callsign:'呼号',ph_search:'输入以搜索网页…',ph_loc:'搜索任意城市…',
   ph_name:'名称',geo_hint:'由 Open-Meteo 地理编码提供',geo_none:'无匹配',geo_err:'查询失败',
   hint_focus:'聚焦搜索',hint_launch:'启动槽位',hint_release:'退出',hi:'最高',lo:'最低',wind:'风速',
@@ -52,9 +52,9 @@ const cLabel=k=>{const c=COND[k]||COND.cloud;return S.lang==='zh'?c[1]:c[0]};
 const DEF={engine:'google',theme:'light',unit:'C',clock:'24',lang:'en',cs:'Aiko'};
 const ENG_IDS=['baidu','google','bing','duckduckgo','yandex'];
 const ENG={
- baidu:{c:'#3D2BCC',d:'#2A1E8F',r:'rgba(61,43,204,.15)',n:'BAIDU',nz:'百度',u:'https://www.baidu.com/s?wd='},
- google:{c:'#FF4D00',d:'#C93B00',r:'rgba(255,77,0,.15)',n:'GOOGLE',nz:'谷歌',u:'https://www.google.com/search?q='},
- bing:{c:'#1467E6',d:'#0B4AA8',r:'rgba(20,103,230,.16)',n:'BING',nz:'必应',u:'https://www.bing.com/search?q='},
+ baidu:{c:'#3D2BCC',d:'#2A1E8F',r:'rgba(61,43,204,.15)',n:'BAIDU',u:'https://www.baidu.com/s?wd='},
+ google:{c:'#FF4D00',d:'#C93B00',r:'rgba(255,77,0,.15)',n:'GOOGLE',u:'https://www.google.com/search?q='},
+ bing:{c:'#1467E6',d:'#0B4AA8',r:'rgba(20,103,230,.16)',n:'BING',u:'https://www.bing.com/search?q='},
  duckduckgo:{c:'#1A9E6A',d:'#0F6F4A',r:'rgba(26,158,106,.16)',n:'DDG',u:'https://duckduckgo.com/?q='},
  yandex:{c:'#D94B2B',d:'#A3351E',r:'rgba(217,75,43,.16)',n:'YANDEX',u:'https://yandex.com/search/?text='}
 };
@@ -386,7 +386,6 @@ function placeInd(seg){const on=seg.querySelector('button.on');if(!on)return;con
 function syncSegs(){$$('[data-group]').forEach(seg=>{const g=seg.dataset.group;$$('button',seg).forEach(b=>b.classList.toggle('on',b.dataset.val===String(S[g])));placeInd(seg)})}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-group] button');if(!b)return;const g=b.parentElement.dataset.group;S[g]=b.dataset.val;save(g);applyAll();});
 function currentEngine(){return ENG[S.engine]||ENG[DEF.engine];}
-function engineGoLabel(e){return S.lang==='zh'&&e.nz?e.nz:e.n;}
 function closeEngineList(){
  const picker=$('#enginePicker'),toggle=$('#engineToggle');
  picker.classList.remove('open');toggle.setAttribute('aria-expanded','false');
@@ -420,7 +419,7 @@ function applyLang(){const d=DICT[S.lang];document.documentElement.lang=S.lang==
  renderEngineUI();renderChips();renderTiles();updateEditBtn();renderWX(false);drawLCD();renderCaption();tick();
 }
 function applyAll(){document.documentElement.dataset.theme=S.theme;if(!ENG[S.engine])S.engine=DEF.engine;const e=currentEngine(),rs=document.documentElement.style;
- rs.setProperty('--eng',e.c);rs.setProperty('--eng-d',e.d);rs.setProperty('--eng-ring',e.r);$('#goBtn').textContent=engineGoLabel(e);
+ rs.setProperty('--eng',e.c);rs.setProperty('--eng-d',e.d);rs.setProperty('--eng-ring',e.r);$('#goBtn').textContent=e.n;
  $('#unitBtn').firstElementChild.textContent='°'+S.unit;$('#fmtBtn').firstElementChild.textContent=S.clock+'H';
  $('#unitBtn').classList.toggle('is-fahrenheit',S.unit==='F');
  $('#csInput').value=S.cs;syncSegs();applyLang();}
