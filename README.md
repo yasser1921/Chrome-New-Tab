@@ -4,7 +4,7 @@
 
 A Chrome new tab inspired by the teenage engineering K.O. II: a silver panel, a segment clock, website keys, weather faders and knobs, and a dot-matrix calendar.
 
-[中文](#中文) · [English](#english) · [下载 / Download](https://github.com/yasser1921/Chrome-New-Tab/releases/download/v1.2.0/TE-OS-1.2.0.zip)
+[中文](#中文) · [English](#english) · [下载 / Download](https://github.com/yasser1921/Chrome-New-Tab/releases/download/v1.3.0/TE-OS-1.3.0.zip)
 
 ## 来源 · Fork
 
@@ -14,8 +14,8 @@ A Chrome new tab inspired by the teenage engineering K.O. II: a silver panel, a 
 
 - **27 英寸 2K 布局。** 视口宽度达到 2200px 时，面板加宽到 1960px，说明文字提到 14–20px，分段时钟、按键、天气推子、旋钮和点阵日历一起放大，使 2560×1440 的最大化窗口一屏可读。1920px 及更窄的布局与源仓库相同。大屏点阵字模在 `app.js` 里按画布高度放大；呼号输入框的宽度改由样式表控制。
 - **搜索引擎。** 搜索框右侧顶部显示当前引擎，下方「更多」展开其余引擎。支持百度、谷歌、必应、DuckDuckGo、Yandex；选择写入本机 `te01.engine`。
-- **版本。** 扩展版本从源仓库的 1.1.0 改为 1.2.0。
-- **安装包。** 下载地址改为本仓库 Release [v1.2.0](https://github.com/yasser1921/Chrome-New-Tab/releases/tag/v1.2.0)，不再使用源仓库 `main` 分支的 ZIP。
+- **版本。** 扩展版本从源仓库的 1.1.0 改为 1.3.0。
+- **安装包。** 下载地址改为本仓库 Release [v1.3.0](https://github.com/yasser1921/Chrome-New-Tab/releases/tag/v1.3.0)，不再使用源仓库 `main` 分支的 ZIP。
 
 This repository is a fork of [RSK21X/TE-OS-Chrome-New-Tab](https://github.com/RSK21X/TE-OS-Chrome-New-Tab). At the fork point both `main` branches matched commit [`d55b406`](https://github.com/RSK21X/TE-OS-Chrome-New-Tab/commit/d55b4062f747bdd539dfafb279cbb0a00802f132) (Merge published README history into hardware redesign). Shortcuts, weather, the calendar, language, and theme behave as they do upstream. Search now uses five engines and an expandable picker. Weather still comes from Open-Meteo, and settings still stay on the device.
 
@@ -23,8 +23,8 @@ Changes after that commit:
 
 - **27-inch 2K layout.** At viewports of 2200px and wider, the chassis grows to 1960px. Labels rise to 14–20px, and the segment clock, keys, weather faders, knobs, and dot-matrix calendar grow with them, so a maximized 2560×1440 window stays readable on one screen. Layouts at 1920px and below match the source repository. The large-screen calendar glyphs scale with canvas height in `app.js`, and the call-sign field width now comes from the stylesheet.
 - **Search engines.** The current engine sits at the top right of the search box. A More control expands the others. Baidu, Google, Bing, DuckDuckGo, and Yandex are supported, and the choice is stored in local `te01.engine`.
-- **Version.** The extension version moves from 1.1.0 in the source repository to 1.2.0.
-- **Install archive.** Downloads point at this repository's [v1.2.0 release](https://github.com/yasser1921/Chrome-New-Tab/releases/tag/v1.2.0) instead of the source repository's `main` branch ZIP.
+- **Version.** The extension version moves from 1.1.0 in the source repository to 1.3.0.
+- **Install archive.** Downloads point at this repository's [v1.3.0 release](https://github.com/yasser1921/Chrome-New-Tab/releases/tag/v1.3.0) instead of the source repository's `main` branch ZIP.
 
 ## 预览 · Screenshots
 
@@ -51,10 +51,10 @@ Changes after that commit:
 
 ### 安装
 
-1. [下载 v1.2.0](https://github.com/yasser1921/Chrome-New-Tab/releases/download/v1.2.0/TE-OS-1.2.0.zip) 并解压。
+1. [下载 v1.3.0](https://github.com/yasser1921/Chrome-New-Tab/releases/download/v1.3.0/TE-OS-1.3.0.zip) 并解压。
 2. 在 Chrome 地址栏打开 `chrome://extensions`。
 3. 开启右上角的 **开发者模式**。
-4. 点击 **加载已解压的扩展程序**，选择包含 `manifest.json` 的文件夹。解压 v1.2.0 后为 `TE-OS-1.2.0`。
+4. 点击 **加载已解压的扩展程序**，选择包含 `manifest.json` 的文件夹。解压 v1.3.0 后为 `TE-OS-1.3.0`。
 5. 打开新标签页即可使用。
 
 也可以克隆仓库后直接加载仓库文件夹。使用 Manifest V3，无需构建步骤。
@@ -102,10 +102,10 @@ Changes after that commit:
 
 ### Install
 
-1. [Download v1.2.0](https://github.com/yasser1921/Chrome-New-Tab/releases/download/v1.2.0/TE-OS-1.2.0.zip) and unzip it.
+1. [Download v1.3.0](https://github.com/yasser1921/Chrome-New-Tab/releases/download/v1.3.0/TE-OS-1.3.0.zip) and unzip it.
 2. Open `chrome://extensions` in Chrome.
 3. Turn on **Developer mode**.
-4. Click **Load unpacked** and select the folder containing `manifest.json`. The v1.2.0 archive unpacks to `TE-OS-1.2.0`.
+4. Click **Load unpacked** and select the folder containing `manifest.json`. The v1.3.0 archive unpacks to `TE-OS-1.3.0`.
 5. Open a new tab.
 
 You can also clone this repository and load its folder directly. The extension uses Manifest V3 and requires no build step.
